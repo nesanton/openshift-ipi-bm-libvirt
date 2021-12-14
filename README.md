@@ -104,6 +104,21 @@ Feel free to overcommit the CPU and rely on Hyperthreading.
 
 You do want SSDs to avoid etcd issues. Feel free to thin-provision the qcow's.
 
-My machine is a second hand herzner (auction) consumer grade server with 6 Cores, 64GB of RAM and 1TB SSD.
+My machine is a second hand herzner (auction) consumer grade server with 6 Cores, 64GB of RAM and 1TB SSD. That's about anough to have a "proper" three-node control plane and play with adding a couple of workers directly during the installation or later by scaling MachineSets.
+
+# Shopping list
+
+Let's count all the things you need
+
+## Server
+
+A physical server or a VM that can do nested KVM (not just qemu).
+See [Challenge #4] for resource calculations.
+
+## DNS zone
+
+You can keep this all within your fancy home lab that has it's own DNS zone and never let the Internet see it.
+
+Otherwise, get yourself a domain name and make sure you can edit the zone. Some registrars offer web hosting which usually unlocks DNS Zone editing, otherwise update the NS record to delegate it elsewhere - cloud provider or a hosting you already have.
 
 # TODO the rest
